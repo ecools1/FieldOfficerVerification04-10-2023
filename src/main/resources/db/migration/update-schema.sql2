@@ -1,0 +1,169 @@
+/*CREATE TABLE pbf_vvs_verification
+(
+    id                 BIGINT NOT NULL,
+    voucher_number     VARCHAR(255),
+    health_region      VARCHAR(255),
+    facility           VARCHAR(255),
+    lab_name           VARCHAR(255),
+    month              VARCHAR(255),
+    hba1c              BOOLEAN,
+    total_cholesterol  BOOLEAN,
+    ldl                BOOLEAN,
+    hdl                BOOLEAN,
+    triglycerides      BOOLEAN,
+    serum_creatinine   BOOLEAN,
+    serum_electrolytes BOOLEAN,
+    urine_microalbumin BOOLEAN,
+    cbc                BOOLEAN,
+    fpg                BOOLEAN,
+    urine_analysis     BOOLEAN,
+    date_issued        date,
+    date_performed     date,
+    user_name          VARCHAR(50),
+    created_at         date,
+    update_at          date,
+    CONSTRAINT pk_pbf_vvs_verification PRIMARY KEY (id)
+);
+
+ALTER TABLE pbf_vvs_facilities
+DROP
+CONSTRAINT pbf_vvs_facilities_health_region_id_fkey;
+
+ALTER TABLE pbf_vvs_verifications
+DROP
+CONSTRAINT pbf_vvs_verifications_created_by_id_fkey;
+
+ALTER TABLE pbf_vvs_verifications
+DROP
+CONSTRAINT pbf_vvs_verifications_facility_id_fkey;
+
+ALTER TABLE pbf_vvs_verifications
+DROP
+CONSTRAINT pbf_vvs_verifications_lab_id_fkey;
+
+ALTER TABLE pbf_vvs_verifications
+DROP
+CONSTRAINT pbf_vvs_verifications_updated_by_id_fkey;
+
+DROP TABLE pbf_vvs_facilities CASCADE;
+
+DROP TABLE pbf_vvs_health_regions CASCADE;
+
+DROP TABLE pbf_vvs_labs CASCADE;
+
+DROP TABLE pbf_vvs_users CASCADE;
+
+DROP TABLE pbf_vvs_verifications CASCADE;
+ALTER TABLE pbf_vvs_facilities
+    DROP CONSTRAINT pbf_vvs_facilities_health_region_id_fkey;
+
+ALTER TABLE pbf_vvs_users
+    DROP CONSTRAINT pbf_vvs_users_user_role_id_fkey;
+
+ALTER TABLE pbf_vvs_verification_logs
+    DROP CONSTRAINT pbf_vvs_verification_logs_event_log_id_fkey;
+
+DROP TABLE pbf_vvs_log_events CASCADE;
+
+DROP TABLE pbf_vvs_user_roles CASCADE;
+
+DROP TABLE pbf_vvs_verification_logs CASCADE;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN facility_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN lab_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN last_updated_by_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN last_updated_time DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN notes TYPE VARCHAR(255) USING (notes::VARCHAR(255));
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN recorded_by_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN recorded_time DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_users
+    ALTER COLUMN user_name TYPE VARCHAR(50) USING (user_name::VARCHAR(50));
+
+ALTER TABLE pbf_vvs_users
+    ALTER COLUMN user_password TYPE VARCHAR(50) USING (user_password::VARCHAR(50));
+
+ALTER TABLE pbf_vvs_users
+    ALTER COLUMN user_role_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN verification_month DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN verification_year DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN voucher_number TYPE VARCHAR(255) USING (voucher_number::VARCHAR(255));
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN voucher_number DROP NOT NULL;
+ALTER TABLE pbf_vvs_facilities
+    DROP CONSTRAINT pbf_vvs_facilities_health_region_id_fkey;
+
+ALTER TABLE pbf_vvs_users
+    DROP CONSTRAINT pbf_vvs_users_user_role_id_fkey;
+
+ALTER TABLE pbf_vvs_verification_logs
+    DROP CONSTRAINT pbf_vvs_verification_logs_event_log_id_fkey;
+
+DROP TABLE pbf_vvs_log_events CASCADE;
+
+DROP TABLE pbf_vvs_user_roles CASCADE;
+
+DROP TABLE pbf_vvs_verification_logs CASCADE;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN facility_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN lab_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN last_updated_by_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN last_updated_time DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN notes TYPE VARCHAR(255) USING (notes::VARCHAR(255));
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN recorded_by_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN recorded_time DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_users
+    ALTER COLUMN user_name TYPE VARCHAR(50) USING (user_name::VARCHAR(50));
+
+ALTER TABLE pbf_vvs_users
+    ALTER COLUMN user_password TYPE VARCHAR(50) USING (user_password::VARCHAR(50));
+
+ALTER TABLE pbf_vvs_users
+    ALTER COLUMN user_role_id DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN verification_month DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN verification_year DROP NOT NULL;
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN voucher_number TYPE VARCHAR(255) USING (voucher_number::VARCHAR(255));
+
+ALTER TABLE pbf_vvs_verifications
+    ALTER COLUMN voucher_number DROP NOT NULL;
+  */
