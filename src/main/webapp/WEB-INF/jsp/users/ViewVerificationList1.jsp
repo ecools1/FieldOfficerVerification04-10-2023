@@ -49,27 +49,28 @@
             <table class="table table-bordered table-striped table-hover">
             	<tr class="bg-dark text-white">
 					<th>Voucher Number</th>
-					<th>health Id</th>
+					<th>Month</th>
+					<th>Year</th>
 					<th>facility</th>
 					<th>lab name</th>
 
-					<th>Month</th>
-					<th>Year</th>
 
-					<th>HbA1c</th>
-					<th>Total Cholesterol</th>
-					<th>LDL</th>
-					<th>HDL</th>
-					<th>Triglycerides</th>
-					<th>Creatinine</th>
-					<th>Electrolytes</th>
-					<th>Urine Microalbumin</th>
-					<th>CBC</th>
-					<th>FPG</th>
-					<th>Urine Analysis</th>
-					<th>Date Iss</th>
-					<th>Date Per</th>
-					<th>User</th>
+
+
+					<th>renalFunction</th>
+					<th>liverFunction</th>
+					<th>lipidProfile</th>
+					<th>urinalisysTests</th>
+					<th>glucoseToleranceTest30</th>
+					<th>glucoseToleranceTest30</th>
+					<th>glucoseToleranceTest60</th>
+					<th>glucoseToleranceTest90</th>
+					<th>verification.glucoseToleranceTest120</th>
+					<th>glucoseToleranceTest180</th>
+					<th>Hba1c</th>
+					<th>fastingBloodGlucose</th>
+					<th>urineMicroalbumintest</th>
+					<th>twoHourPostPrandialTes</th>
 
 					<th>Edit</th>
 					<th>Delete</th>
@@ -83,10 +84,9 @@
 
 						<td>${verification.year}</td>
 
-						<td>${verification.facilityId}</td>
-						<td>${verification.labId}</td>
-						<td>${verification.lastUpdatedById}</td>
-						<td>${verification.recordedById}</td>
+						<td>${verification.facility.name}</td>
+						<td>${verification.lab.name}</td>
+
 						<td>${verification.renalFunctionTestsVerified}</td>
 						<td>${verification.liverFunctionTestsVerified}</td>
 						<td>${verification.lipidProfileTestsVerified}</td>
@@ -103,9 +103,10 @@
 						<td>${verification.urineMicroalbumintestVerified}</td>
 
 						<td>${verification.twoHourPostPrandialTestVerified}</td>
-						<td>${verification.recordedTime}</td>
-						<td>${verification.lastUpdatedTime}</td>
 
+
+
+						<td>${verification.lastUpdatedBy}</td>
 
 
 

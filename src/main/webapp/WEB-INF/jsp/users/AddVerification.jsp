@@ -192,6 +192,9 @@
 									<td><label for="twoHourPostPrandialTestVerified"> Two Hour Post Prandial</label></td>
 									<td><form:checkbox path="twoHourPostPrandialTestVerified" id="twoHourPostPrandialTestVerified"
 													   class="form-control input-sm"/></td>
+									<td><label for="lastUpdatedById">last Update By</label></td>
+									<td><form:input type="number" path="lastUpdatedBy" id="lastUpdatedById"
+													   class="form-control input-sm"/></td>
 
 									<td colspan="4"><label  for="notes">Notes</label>
 									<form:textarea path="notes" id="notes"
